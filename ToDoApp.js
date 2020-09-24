@@ -14,9 +14,13 @@ function addClick(){
     createdbutton.setAttribute("type","button");
     createdbutton.setAttribute("value","Delete");
     createdbutton.id = "createdbutton"+i;
-    document.body.appendChild(createddiv);
-    createddiv.appendChild(createdh3);
-    createddiv.appendChild(createdbutton);
+    if (textinput!=''){
+        document.body.appendChild(createddiv);
+        createddiv.appendChild(createdh3);
+        createddiv.appendChild(createdbutton);
+    }else {
+        alert("Input can not be empty");
+    }
     createdbutton.addEventListener('click',function(parameter){
         parameter.target.parentNode.remove();
     })
